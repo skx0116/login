@@ -1,0 +1,37 @@
+server:
+  port: 8080
+  tomcat:
+    uri-encoding: UTF-8
+
+spring:
+  datasource:
+    username: root
+    password: 315279
+    url: jdbc:mysql://localhost:3306/model?useUnicode=true&characterEncoding=utf-8&useSSL=true&serverTimezone=UTC
+    driver-class-name: com.mysql.jdbc.Driver
+  thymeleaf:
+    cache: false
+    prefix: classpath:/templates/
+    suffix: .html
+    encoding: utf-8
+    mode: html5
+    servlet:
+      content-type: text/html
+  mvc:
+    static-path-pattern: /static/**
+  http:
+    encoding:
+      force: true
+      charset: utf-8
+      enabled: true
+
+mybatis:
+  mapper-locations: classpath:mapping/*Mapper.xml
+  type-aliases-package: com.example.application.entity
+
+#showSql
+logging:
+  level:
+    com:
+      example:
+        mapper : debug
